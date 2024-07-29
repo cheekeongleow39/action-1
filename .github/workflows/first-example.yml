@@ -7,10 +7,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Welcome Message
-              run: echo "Welcome Message"
+              run: echo "Welcome Message $(date)"
             
             - name: List files
               run: ls
-            
+            # This will have error, cos file in not found
             - name: Read file
               run: cat README.md
