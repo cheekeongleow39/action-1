@@ -1,0 +1,17 @@
+name: Exercise My First Example
+on: push
+jobs:
+    Run_My_First_Eg:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repo
+              uses: actions/checkout@v4
+
+            - name: Print Welcome Message
+              run: echo "Welcome Runner $(date)"
+
+            - name: "Print current directory & List files"
+              run: pwd; ls
+
+            - name: Print Readme Content
+              run: cat README.md
