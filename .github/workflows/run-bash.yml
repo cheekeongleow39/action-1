@@ -1,0 +1,13 @@
+name: Run From Bash
+
+on: push
+
+jobs:
+    Run_A_Dragon:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repo
+              uses: actions/checkout@v4
+            - name: Execute bash
+              run: bash ./example.sh
+            
