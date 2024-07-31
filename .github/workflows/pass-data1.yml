@@ -9,8 +9,13 @@ jobs:
             - run: echo "Start build at $(date)" >> runner.log
             - run: echo "Upload Build artifacts" >> runner.log
             - uses: actions/upload-artifact@v4
+              with:
+                name: runner
+                path: ./runner.log
     deploy:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/download-artifact@v4
+              with:
+                name: runner
             - run: cat runner.log
