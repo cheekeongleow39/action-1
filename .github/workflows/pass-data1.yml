@@ -22,5 +22,6 @@ jobs:
             - uses: actions/download-artifact@v4
               with:
                 name: runner
+            - run: echo "${{ env.varMyBuildVersion }}"
             - run: echo "My build version is ${{ env.varMyBuildVersion }}" >> runner.log
             - run: cat runner.log
