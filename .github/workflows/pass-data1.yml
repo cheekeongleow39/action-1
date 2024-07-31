@@ -5,9 +5,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - run: ls
-            - run: echo "Start build at $(date)" >> runner.log
-            - run: echo "Upload Build artifacts" >> runner.log
+            - run: |
+                ls
+                echo "Start build at $(date)" >> runner.log
+                echo "Upload Build artifacts" >> runner.log
             - uses: actions/upload-artifact@v4
               with:
                 name: runner
