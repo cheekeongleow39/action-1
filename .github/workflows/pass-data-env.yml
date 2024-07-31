@@ -1,0 +1,12 @@
+name: Pass Data Via Env
+on: push
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "varVersion=1" >> $GITHUB_ENV
+    deploy:
+        needs: [build]
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "${{ env.varVersion }}"
