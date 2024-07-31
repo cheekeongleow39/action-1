@@ -10,3 +10,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: echo "${{ env.varVersion }}"
+            - name: Set Output
+              id: step1
+              run: echo "::set-output name=my_output::my_value"
+            - name: Use Output
+              run: echo "${{ steps.step1.outputs.my_output }}"
